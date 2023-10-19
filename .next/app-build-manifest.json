@@ -11,10 +11,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/login/page.js"
     ],
-    "/not-found": [
+    "/login/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/css/app/login/layout.css",
+      "static/chunks/app/login/layout.js"
     ]
   }
 }
