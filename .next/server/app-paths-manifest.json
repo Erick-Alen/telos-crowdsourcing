@@ -1,3 +1,5 @@
 {
+  "/problems/create/page": "app/problems/create/page.js",
+  "/page": "app/page.js",
   "/login/page": "app/login/page.js"
 }

@@ -1,22 +1,21 @@
-'use client'
+'use client';
 
 import { Icon } from '@iconify/react';
 
-type ButtonVariants = "primary" | "secondary";
+type ButtonVariants = 'primary' | 'secondary';
 
 type ButtonProps = {
   variant?: ButtonVariants;
   iconLeft?: string;
   iconRight?: string;
-} & React.HTMLAttributes<HTMLButtonElement>
+} & React.HTMLAttributes<HTMLButtonElement>;
 
 const variants = {
-  primary:
-    'border border-sub-30 bg-on-code hover: bg-on-code text-white gap-1',
+  primary: 'border border-sub-30 bg-on-code hover: bg-on-code text-white gap-1',
   secondary: 'border border-secondary text-black gap-3 ',
 };
 
-export const Button = ({
+const Button = ({
   variant = 'primary',
   children,
   iconLeft,
@@ -35,3 +34,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;

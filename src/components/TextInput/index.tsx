@@ -10,7 +10,7 @@ type TextInputProps = {
   subDescription?: string | React.ReactNode;
 } & React.InputHTMLAttributes<HTMLInputElement>; //adding all properties of an html input element inside our component
 
-export const TextInput = ({
+const TextInput = ({
   iconLeft,
   iconRight,
   label,
@@ -24,6 +24,7 @@ export const TextInput = ({
   return (
     <div className='mb-6'>
       <label className={mergedLabelClasses}>{label}</label>
+      {subDescription}
       <label
         className={`flex items-center border border-sub rounded-[8px] bg-white `}
       >
@@ -47,3 +48,5 @@ export const TextInput = ({
     </div>
   );
 };
+
+export default TextInput;

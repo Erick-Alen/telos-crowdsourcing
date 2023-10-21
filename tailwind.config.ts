@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'black-color': 'var(--black-color)',
         primary: 'var(--primary-color)',
         secondary: 'var(--secondary-color)',
         'sub-30': 'var(--sub-30)',
@@ -19,6 +20,9 @@ const config: Config = {
         'on-code-70': 'var(--on-code-70)',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      height: {
+        'screen-navbar': 'calc(100vh - 64px) !important'
       },
     },
   },
