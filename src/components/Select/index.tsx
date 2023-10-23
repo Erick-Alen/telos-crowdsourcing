@@ -35,7 +35,7 @@ const Select = ({
           className={`bg-white border text-gray-900 ${defaultSelectClasses}`}
         >
           {options.map((option, index) => (
-            <option value={option.value}>{option.text}</option>
+            <option defaultValue={3} value={option.value}>{option.text}</option>
           ))}
         </select>
       </div>

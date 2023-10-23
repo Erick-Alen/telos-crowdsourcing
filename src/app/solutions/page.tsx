@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import ActionsCard from './components/ActionsCard';
 import handsImage from '@/assets/Rectangle 5.jpg';
-import ProblemsCard from './components/ProblemsCard';
+import ActionsCard from '../components/ActionsCard';
 
-export default function Home() {
-  const problems: Problem[] = [
+export default function Solutions() {
+  const actions: Action[] = [
     {
-      imageUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+      img: 'https://jpeg.org/images/jpeg-home.jpg',
       title: 'Action',
       description: 'Solution for a problem',
       author: 'Samuel Moreira dos santos',
@@ -15,21 +14,23 @@ export default function Home() {
         city: 'Maringá',
         neighborhood: 'Zona 02',
       },
-      deadline: '2023-10-23',
-      pix: 'teste pix',
+      amountCollected: 150,
+      totalGoal: 1000,
+      finalDate: '2023-10-23',
     },
     {
-      imageUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+      img: 'https://jpeg.org/images/jpeg-home.jpg',
       title: 'Action',
       description: 'Solution for a problem',
-      author: 'Samuel Moreira dos santos',
+      author: 'Samuel Moreira',
       address: {
         uf: 'PR',
         city: 'Maringá',
         neighborhood: 'Zona 02',
       },
-      deadline: '2023-10-23',
-      pix: 'teste pix',
+      amountCollected: 150,
+      totalGoal: 1000,
+      finalDate: '2023-10-23',
     },
   ];
   return (
@@ -40,8 +41,8 @@ export default function Home() {
         </h1>
       </div>
       <div className='flex flex-wrap gap-8 w-full max-w-[1360] justify-center py-4'>
-        {problems.map((problem, index) => (
-          <ProblemsCard key={index} problem={problem} />
+        {actions.map((action, index) => (
+          <ActionsCard key={index} action={action} />
         ))}
       </div>
     </main>

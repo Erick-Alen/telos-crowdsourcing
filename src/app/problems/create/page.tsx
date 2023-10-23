@@ -35,7 +35,6 @@ const ProblemCreate = () => {
   });
 
   const handleChangeState = (updatedValues: ProblemCreateState) => {
-    console.log(updatedValues);
     setState((prev) => ({
       ...prev,
       ...updatedValues,

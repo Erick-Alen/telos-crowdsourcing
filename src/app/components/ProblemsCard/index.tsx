@@ -1,3 +1,4 @@
+'use client'
 import Address from '@/components/Address';
 import Button from '@/components/Button';
 import ProgressBar from '@/components/Progressbar';
@@ -5,25 +6,16 @@ import { stringUtils } from '@/utils/stringUtils';
 import Image from 'next/image';
 import RemainingDays from '../RemainingDays';
 
-type ActionCardProps = {
-  action: Action;
+type ProblemsCardProps = {
+  problem: Problem;
 };
-const ActionsCard = ({ action }: ActionCardProps) => {
-  const {
-    img,
-    title,
-    author,
-    description,
-    address,
-    amountCollected,
-    totalGoal,
-    finalDate,
-  } = action;
+const ProblemsCard = ({ problem }: ProblemsCardProps) => {
+  const { title, description, address, imageUrl, deadline, author } = problem;
   return (
     <div className='flex flex-col gap-4 rounded-lg overflow-hidden shadow-md w-full max-w-[420px] min-w-[320]'>
       <img
         className='w-full aspect-card-image'
-        src={img}
+        src={imageUrl}
         width={420}
         height={280}
         alt='image'
@@ -41,17 +33,7 @@ const ActionsCard = ({ action }: ActionCardProps) => {
             neighborhood={address.neighborhood}
           />
         </div>
-        <ProgressBar
-          percent={amountCollected / totalGoal}
-          firstElement={
-            <div className='flex flex-col items-center text-sm'>
-              <h3 className='font-bold'>R$ {amountCollected}</h3>
-            </div>
-          }
-          secondElement={
-            <RemainingDays finalDate={`${finalDate}`} label='left' />
-          }
-        />
+        <RemainingDays finalDate={`${deadline}`} label='for the end of voting' />
       </div>
       <Button iconLeft='fluent:handshake-24-filled' className='py-6'>
         Support action
@@ -60,4 +42,4 @@ const ActionsCard = ({ action }: ActionCardProps) => {
   );
 };
 
-export default ActionsCard;
+export default ProblemsCard;
